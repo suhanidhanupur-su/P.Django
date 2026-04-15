@@ -13,7 +13,7 @@
     
 from django.db import models
 
-# Student Model (optional - practice ke liye)
+# Student Model (optional)
 class Student(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
@@ -23,10 +23,11 @@ class Student(models.Model):
         return self.name
 
 
-# Category Model
+# Category Model (FINAL)
 class Category(models.Model):
-    name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='categories/', null=True, blank=True)
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    image = models.ImageField(upload_to='categories/', blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -42,4 +43,3 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-
