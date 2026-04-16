@@ -24,13 +24,17 @@ class Student(models.Model):
 
 
 # Category Model (FINAL)
+
+from django.db import models
+
+# Category Model
 class Category(models.Model):
-    name = models.CharField(max_length=255)
-    description = models.TextField(blank=True)
-    image = models.ImageField(upload_to='categories/', blank=True, null=True)
+    category_name = models.CharField(max_length=255)
+    category_image = models.ImageField(upload_to='categories/', null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.category_name
+
 
 
 # Product Model
