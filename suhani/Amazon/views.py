@@ -14,3 +14,7 @@ def category_products(request):
     categories = Category.objects.prefetch_related('products').all()
     return render(request, 'category_products.html', {'categories': categories})
 
+
+def product_list(request):
+    products = Product.objects.all()
+    return render(request, 'product_list.html', {'products': products})
