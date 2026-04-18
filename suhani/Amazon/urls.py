@@ -28,5 +28,5 @@ from .views import * ## Importing all views from the current app's views.py file
 
 urlpatterns = [
     path('categorie', category_products, name='category_products'),
-    path('products/', product_list, name='products_list'),
+    path('products', product_list, name='products_list'),
 ]
